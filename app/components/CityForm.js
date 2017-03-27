@@ -18,21 +18,16 @@ class CityFormContainer extends React.Component{
             city:''
         };
         this.handleUpdateCity = this.handleUpdateCity.bind(this);
-        this.handleSubmitCity = this.handleSubmitCity.bind(this);
     }
     handleUpdateCity(e){
         this.setState({
             city: e.target.value
         })
     }
-    handleSubmitCity(){
-        console.log(this.state.city);
-    }
     render(){
         return(
             <CityFormPresentation
                 city={this.state.city}
-                onSubmitCity={this.handleSubmitCity}
                 onUpdateCity={this.handleUpdateCity}
                 flexDirection={this.props.flexDirection}
             />
@@ -41,6 +36,9 @@ class CityFormContainer extends React.Component{
 }
 CityFormContainer.defaultProps = defaultProps;
 CityFormContainer.propTypes = propTypes;
+CityFormContainer.contextTypes = {
+    router: React.PropTypes.object.isRequired
+}
 
 
 export default CityFormContainer;

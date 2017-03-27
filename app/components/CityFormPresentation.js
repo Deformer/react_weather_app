@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from '../styles/cityForm';
+import {Link} from 'react-router';
+
 const PropTypes = React.PropTypes;
 
 const propTypes = {
     city: PropTypes.string.isRequired,
     onUpdateCity: PropTypes.func.isRequired,
-    onSubmitCity: PropTypes.func.isRequired,
     flexDirection: PropTypes.string
 };
 
@@ -24,14 +25,15 @@ function CityFormPresentation(props) {
                 value={props.city}
                 type="text"
             />
-            <button
-                className="btn btn-success"
-                type="button"
-                style={styles.buttonStyles}
-                onClick={props.onSubmitCity}
-            >
-                Get Weather
-            </button>
+            <Link to={"/forecast/"+props.city}>
+                <button
+                    className="btn btn-success"
+                    type="button"
+                    style={styles.buttonStyles}
+                >
+                    Get Weather
+                </button>
+            </Link>
         </div>
 
     )
