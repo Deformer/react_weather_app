@@ -15,7 +15,7 @@ const styles = {
         textAlign: 'center',
         position: 'absolute',
         width: '100%',
-        marginTop: '30px',
+        marginTop: '60px',
     }
 }
 
