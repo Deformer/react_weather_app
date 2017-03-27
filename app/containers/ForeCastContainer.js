@@ -19,7 +19,8 @@ class ForeCastContainer extends React.Component{
         this.state = {
             isLoading:true,
             weather: {}
-        }
+        };
+        this.handleClick = this.handleClick.bind(this);
     }
     componentWillMount(){
         var city = this.props.params.city;
@@ -30,11 +31,31 @@ class ForeCastContainer extends React.Component{
         var city = this.props.params.city;
         initState.call(this, city);
     }
+    handleClick(index){
+        if(this.state.weather.list && index < this.state.weather.list.length) {
+            this.context.router.push({
+                pathname: '/detail',
+                query: {
+                    weatherAtDay: JSON.stringify(this.state.weather.list[index]),
+                    city: this.props.params.city
+                }
+            })
+        }
+    }
     render(){
         return (
-            <ForeCast isLoading={this.state.isLoading} dayList={this.state.weather.list} city={this.props.params.city}/>
+            <ForeCast
+                isLoading={this.state.isLoading}
+                dayList={this.state.weather.list}
+                city={this.props.params.city}
+                onUserClick={this.handleClick}
+            />
         )
     }
 }
+
+ForeCastContainer.contextTypes = {
+    router: PropTypes.object.isRequired
+};
 
 export default ForeCastContainer;
