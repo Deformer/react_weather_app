@@ -1,22 +1,22 @@
-import React from 'react';
-import styles from '../styles/cityForm';
-import {Link} from 'react-router';
+import React from "react";
+import styles from "../styles/cityForm";
+import {Link} from "react-router";
 
 const PropTypes = React.PropTypes;
 
 const propTypes = {
-    city: PropTypes.string.isRequired,
-    onUpdateCity: PropTypes.func.isRequired,
-    flexDirection: PropTypes.string
+	city: PropTypes.string.isRequired,
+	onUpdateCity: PropTypes.func.isRequired,
+	flexDirection: PropTypes.string
 };
 
 const defaultProps = {
-    flexDirection: 'row'
+	flexDirection: "row"
 };
 
 
 function CityFormPresentation(props) {
-    return (
+	return (
         <div style={new styles.FormStyles(props.flexDirection)}>
             <input
                 className="form-control"
@@ -36,8 +36,8 @@ function CityFormPresentation(props) {
             </Link>
         </div>
 
-    )
-};
+	);
+}
 CityFormPresentation.propTypes = propTypes;
 CityFormPresentation.defaultProps = defaultProps;
 

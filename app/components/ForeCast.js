@@ -1,26 +1,26 @@
-import React from 'react';
-import DayIcon from '../components/DayIcon';
-import styles from '../styles/ForeCast';
-import Loading from './Loading';
-import helpers from '../utils/helpers';
+import React from "react";
+import DayIcon from "../components/DayIcon";
+import styles from "../styles/ForeCast";
+import Loading from "./Loading";
+import helpers from "../utils/helpers";
 
 const PropTypes = React.PropTypes;
 
 function fixArg(func,arg) {
-    return function (){
-        func(arg);
-    }
+	return function (){
+		func(arg);
+	};
 }
 
 const propTypes = {
-    city: PropTypes.string.isRequired,
-    dayList: PropTypes.array,
-    isLoading: PropTypes.bool.isRequired,
-    onUserClick: PropTypes.func.isRequired
+	city: PropTypes.string.isRequired,
+	dayList: PropTypes.array,
+	isLoading: PropTypes.bool.isRequired,
+	onUserClick: PropTypes.func.isRequired
 };//TODO add validation to the array item
 
 function ForeCast(props) {
-    return props.isLoading
+	return props.isLoading
         ? <Loading/>
         :<div style={styles.mainDiv}>
             <h1 style={styles.header}>{props.city}</h1>
@@ -35,7 +35,7 @@ function ForeCast(props) {
                     />
                 </div>) }
             </div>
-        </div>
+        </div>;
 
 }
 

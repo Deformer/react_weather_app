@@ -1,9 +1,9 @@
-import React from 'react';
-import { Router, Route, hashHistory, IndexRoute } from 'react-router'
-import Main from '../components/Main';
-import PickCityFormContainer from '../containers/PickCityFormContainer';
-import ForeCastContainer from '../containers/ForeCastContainer';
-import DetailContainer from '../containers/DetailContainer';
+import React from "react";
+import { Router, Route, hashHistory, IndexRoute } from "react-router";
+import Main from "../components/Main";
+import PickCityFormContainer from "../containers/PickCityFormContainer";
+import ForeCastContainer from "../containers/ForeCastContainer";
+import DetailContainer from "../containers/DetailContainer";
 
 const routes = (
     <Router history={hashHistory}>
@@ -15,4 +15,4 @@ const routes = (
     </Router>
 );
 
-export default routes
+export default routes;

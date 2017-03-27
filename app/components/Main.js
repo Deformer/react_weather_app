@@ -1,22 +1,22 @@
-import React from 'react'
-import styles from '../styles/main'
+import React from "react";
+import styles from "../styles/main";
 const PropTypes = React.PropTypes;
-import CityFormContainer from './CityForm';
+import CityFormContainer from "./CityForm";
 
 
 
 const defaultProps = {
-    header: 'Clever Title',
+	header: "Clever Title",
 };
 
 const propTypes = {
-    header: PropTypes.string,
-    color: PropTypes.string,
-    fontColor: PropTypes.string
+	header: PropTypes.string,
+	color: PropTypes.string,
+	fontColor: PropTypes.string
 };
 
 function Main(props){
-    return(
+	return(
         <div>
             <div style={styles.defaultNavStyles}>
                 <h2 style={styles.defaultHeaderStyles}>
@@ -26,7 +26,7 @@ function Main(props){
             </div>
             {props.children}
         </div>
-    )
+	);
 }
 
 Main.defaultProps = defaultProps;
