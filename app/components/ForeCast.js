@@ -14,10 +14,24 @@ function fixArg(func,arg) {
 
 const propTypes = {
 	city: PropTypes.string.isRequired,
-	dayList: PropTypes.array,
+	dayList: PropTypes.arrayOf(PropTypes.shape({
+		dt: PropTypes.number.isRequired,
+		weather: PropTypes.arrayOf(PropTypes.shape({
+			icon: PropTypes.string.isRequired
+		})).isRequired
+	})),
 	isLoading: PropTypes.bool.isRequired,
 	onUserClick: PropTypes.func.isRequired
-};//TODO add validation to the array item
+};
+
+const defaultProps = {
+	dayList:[{
+		dt: 0,
+		weather:[{
+			icon:"01"
+		}]
+	}]
+};
 
 function ForeCast(props) {
 	return props.isLoading
@@ -36,9 +50,8 @@ function ForeCast(props) {
                 </div>) }
             </div>
         </div>;
-
 }
-
 ForeCast.propTypes = propTypes;
+ForeCast.defaultProps = defaultProps;
 
 export default ForeCast;

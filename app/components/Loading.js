@@ -19,6 +19,16 @@ const styles = {
 	}
 };
 
+const propTypes = {
+	text: PropTypes.string,
+	speed: PropTypes.number
+};
+
+const defaultProps = {
+	speed: 300,
+	text: "Loading"
+};
+
 class Loading extends React.Component{
 	constructor(props){
 		super(props);
@@ -54,14 +64,7 @@ class Loading extends React.Component{
 	}
 }
 
-Loading.propTypes = {
-	text: PropTypes.string,
-	speed: PropTypes.number
-};
-
-Loading.defaultProps = {
-	speed: 300,
-	text: "Loading"
-};
+Loading.propTypes = propTypes;
+Loading.defaultProps = defaultProps;
 
 export default Loading;

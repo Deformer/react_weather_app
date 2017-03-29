@@ -7,7 +7,6 @@ class DetailContainer extends React.Component{
 		this.weather = JSON.parse(this.props.location.query.weatherAtDay);
 	}
 	render(){
-		console.log(this.weather);
 		return <Detail weather={this.weather} city={this.props.location.query.city}/>;
 	}
 }

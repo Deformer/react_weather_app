@@ -3,16 +3,12 @@ import styles from "../styles/main";
 const PropTypes = React.PropTypes;
 import CityFormContainer from "./CityForm";
 
-
+const propTypes = {
+	header: PropTypes.string
+};
 
 const defaultProps = {
 	header: "Clever Title",
-};
-
-const propTypes = {
-	header: PropTypes.string,
-	color: PropTypes.string,
-	fontColor: PropTypes.string
 };
 
 function Main(props){
