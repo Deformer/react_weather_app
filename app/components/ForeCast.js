@@ -28,7 +28,7 @@ const defaultProps = {
 	dayList:[{
 		dt: 0,
 		weather:[{
-			icon:"01"
+			icon:"01d"
 		}]
 	}]
 };
