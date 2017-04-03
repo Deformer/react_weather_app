@@ -1,8 +1,8 @@
 const styles = {
 	div: {
-		fontSize: "34px",
-		fontWeight: "100",
-		maxWidth: "400px",
+		fontSize: 34,
+		fontWeight: 100,
+		maxWidth: 400,
 		margin: "0 auto",
 		textAlign: "center"
 	}

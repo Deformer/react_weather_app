@@ -1,6 +1,6 @@
 import React from "react";
 import {Link} from "react-router";
-import styles from "../styles/DayIcon";
+import styles from "./DayIcon.styles";
 const PropTypes = React.PropTypes;
 
 const propTypes = {
@@ -21,3 +21,5 @@ function DayIcon(props){
 DayIcon.propTypes = propTypes;
 
 export default DayIcon;
+
+//TODO собрать вместе компоненты

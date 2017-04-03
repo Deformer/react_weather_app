@@ -5,11 +5,12 @@ const styles = {
 		alignItems: "center",
 		background: "rgba(252, 90, 44, 0.89)",
 		color: "#fff",
-		padding: "5px"
+		padding: 5
 	},
 	defaultHeaderStyles : {
-		margin: "0px"
+		margin: 0
 	}
 };
+//TODO вынести в отдльный файл cssc
 
 export default styles;

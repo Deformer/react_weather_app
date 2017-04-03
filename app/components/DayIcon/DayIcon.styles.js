@@ -4,16 +4,17 @@ const styles = {
 		alignItems: "center",
 		justifyContent: "center",
 		flexDirection: "column",
-		margin: "35px"
+		margin: 35
 	},
 	img:{
-		height: "130px"
+		height: 130
 	},
 	header:{
-		fontSize: "30px",
+		fontSize: 30,
 		color: "#333",
-		fontWeight: "100"
+		fontWeight: 100
 	}
 };
 
 export default styles;
+

@@ -8,21 +8,21 @@ const styles = {
 		alignItems: "center",
 		flexDirection: "row",
 		flexWrap: "wrap",
-		maxWidth: "1200px",
-		margin: "50px auto"
+		maxWidth: 1200,
+		margin: 50
 	},
 	p:{
-		fontSize: "30px",
+		fontSize: 30,
 		color: "#333",
-		fontWeight: "100"
+		fontWeight: 100
 	},
 	header:{
-		fontSize: "65px",
+		fontSize: 65,
 		color: "#333",
-		fontWeight: "100",
+		fontWeight: 100,
 		textAlign: "center",
-		marginTop: "50px",
-		marginBottom: "30px"
+		marginTop: 50,
+		marginBottom: 30
 	}
 };
 
