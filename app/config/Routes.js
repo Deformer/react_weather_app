@@ -4,15 +4,36 @@ import Main from "../components/Main/Main";
 import PickCityForm from "../components/PickCityForm/PickCityForm";
 import Forecast from "../components/Forecast/Forecast";
 import Detail from "../components/Detail/Detail";
+import weather from '../reducers/weather';
+import { createStore, applyMiddleware, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
+import city from '../reducers/city';
+import { getWeather } from '../actions/actions';
+
+
+const weatherApp = combineReducers({
+    weather,
+    city
+});
+
+const store = createStore(
+    weatherApp,
+    applyMiddleware(
+        thunkMiddleware
+    )
+);
 
 const routes = (
-    <Router history={hashHistory}>
-        <Route path="/" component={Main} >
-            <IndexRoute component={PickCityForm} />
-            <Route path="/forecast/:city" component={Forecast}/>
-            <Route path="/detail" component={Detail}/>
-        </Route>
-    </Router>
+    <Provider store={store} >
+        <Router history={hashHistory}>
+            <Route path="/" component={Main} >
+                <IndexRoute component={PickCityForm} />
+                <Route path="/forecast/:city" component={Forecast}/>
+                <Route path="/detail" component={Detail}/>
+            </Route>
+        </Router>
+    </Provider>
 );
 
 export default routes;

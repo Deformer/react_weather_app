@@ -9,7 +9,7 @@ const PropTypes = React.PropTypes;
 
 const propTypes = {
     flexDirection: PropTypes.string
-};
+};//TODO сделать flexDirection через static поле
 
 const mapStateToProps = (state) => {
 	return {
@@ -40,7 +40,6 @@ let CityForm = ({
 				onClick={() =>{
                     dispatch(getWeather(city));
                 }}
-
 			>
 				Get Weather
 			</button>
@@ -49,9 +48,6 @@ let CityForm = ({
 	);
 }
 CityForm.propTypes = propTypes;
-CityForm.contextTypes = {
-	store: PropTypes.object
-};
 
 CityForm = connect(
 	mapStateToProps,
