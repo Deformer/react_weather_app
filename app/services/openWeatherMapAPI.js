@@ -6,7 +6,7 @@ function makeRequest(city){
 	return axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&APPID=${key}`);
 }
 
-let openWeatherMapHelper = {
+let openWeatherMapAPI = {
 	getWeatherForCity: city =>{
 		return makeRequest(city)
             .then(response => response.data)
@@ -17,4 +17,4 @@ let openWeatherMapHelper = {
 	}
 };
 
-export default openWeatherMapHelper;
+export default openWeatherMapAPI;

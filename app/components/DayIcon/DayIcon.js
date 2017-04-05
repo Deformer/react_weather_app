@@ -21,5 +21,3 @@ function DayIcon(props){
 DayIcon.propTypes = propTypes;
 
 export default DayIcon;
-
-//TODO собрать вместе компоненты

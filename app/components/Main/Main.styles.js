@@ -11,6 +11,5 @@ const styles = {
 		margin: 0
 	}
 };
-//TODO вынести в отдльный файл cssc
 
 export default styles;
