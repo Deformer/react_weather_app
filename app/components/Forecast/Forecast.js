@@ -1,5 +1,5 @@
 import React from "react";
-import openWeatherMapHelper from "../../services/openWeatherMapAPI";
+import openWeatherMapAPI from "../../services/openWeatherMapAPI";
 import DayIcon from "../DayIcon/DayIcon";
 import styles from "./Forecast.styles";
 import Loading from "../Loading/Loading";
@@ -18,7 +18,7 @@ class Forecast extends React.Component{
 	}
 
     initState(city){
-        openWeatherMapHelper.getWeatherForCity(city).then(weatherInfo => {
+        openWeatherMapAPI.getWeatherForCity(city).then(weatherInfo => {
             this.setState({
                 weather: weatherInfo,
                 isLoading:false
