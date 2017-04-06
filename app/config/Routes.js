@@ -9,7 +9,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import city from '../reducers/city';
-import { getWeather } from '../actions/actions';
+import { getWeather } from '../actions/weather.actions';
 
 
 const weatherApp = combineReducers({

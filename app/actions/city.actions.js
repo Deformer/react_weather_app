@@ -5,4 +5,10 @@ const setCity = (city) => {
     }
 };
 
-export {setCity}
+const clearCity = () => {
+    return {
+        type: 'CLEAR_CITY'
+    }
+}
+
+export {setCity, clearCity}

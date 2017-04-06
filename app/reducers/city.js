@@ -8,6 +8,8 @@ const city = (
     switch (action.type){
         case 'SELECT_CITY':
             return action.city;
+        case 'CLEAR_CITY':
+            return '';
         default:
             return state;
     }

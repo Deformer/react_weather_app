@@ -14,3 +14,5 @@ const styles = {
         marginTop: 60,
     }
 };
+
+export default styles;

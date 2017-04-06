@@ -1,9 +1,9 @@
 import React from "react";
 import styles from "./CityForm.styles";
 import {Link} from "react-router";
-import {getWeather} from '../../actions/actions'
+import {getWeather} from '../../actions/weather.actions'
 import {connect} from 'react-redux';
-import { setCity } from '../../actions/city.actions';
+import { setCity, clearCity } from '../../actions/city.actions';
 
 const PropTypes = React.PropTypes;
 
@@ -30,6 +30,7 @@ let CityForm = ({
 			onChange={e => {
 				dispatch(setCity(e.target.value))
 			}}
+			value={city}
 			type="text"
 		/>
 		<Link to={"/forecast/"+city}>
@@ -38,7 +39,10 @@ let CityForm = ({
 				type="button"
 				style={styles.buttonStyles}
 				onClick={() =>{
-                    dispatch(getWeather(city));
+					if(city) {
+                        dispatch(getWeather(city));
+                        dispatch(clearCity())
+                    }
                 }}
 			>
 				Get Weather
