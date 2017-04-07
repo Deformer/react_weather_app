@@ -6,6 +6,7 @@ import helpers from "../../utils/helpers";
 import { connect } from 'react-redux';
 import {getWeather} from '../../actions/weather.actions';
 import { setCity } from '../../actions/city.actions';
+import {Link} from 'react-router';
 
 const PropTypes = React.PropTypes;
 
@@ -13,14 +14,12 @@ const mapStateToProps = (state) => {
     return {
         isLoading: state.weather.isLoading,
 		weather: state.weather.weather,
-		city: state.city
     }
 };
 
 let Forecast = ({
 	isLoading,
  	weather,
- 	city,
    	dispatch,
    	params
 }) =>{
@@ -37,12 +36,12 @@ let Forecast = ({
 			<p style={styles.p}>Select a day</p>
 			<div style={styles.div}>
 				{weather.list.map( (day,i) =>
-					<div key={i}>
+					<Link to={`/detail/${params.city}/${i}`} key={i}>
 						<DayIcon
 							header={helpers.formatHeaderFromDate(day.dt)}
 							icon={day.weather[0].icon}
 						/>
-					</div>)}
+					</Link>)}
 			</div>
 		</div>
 	);

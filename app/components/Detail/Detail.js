@@ -2,29 +2,54 @@ import React from "react";
 import DayIcon from "../DayIcon/DayIcon";
 import helpers from "../../utils/helpers";
 import styles from "./Detail.styles";
+import {connect} from 'react-redux';
+import Loading from '../Loading/Loading';
+import { getWeather } from '../../actions/weather.actions';
+import { setCity } from '../../actions/city.actions';
 
-class Detail extends React.Component{
-	constructor(props){
-		super(props);
-		this.weather = JSON.parse(this.props.location.query.weatherAtDay);
-	}
-	render(){
-		return(
-			<div>
+
+const mapStateToProps = (state,ownProps) => {
+    return {
+        isLoading: state.weather.isLoading,
+        weather: state.weather.weather.list ? state.weather.weather.list[ownProps.params.index] : undefined ,
+		error: ownProps.params.index > 6
+    }
+};
+
+let Detail = ({
+	isLoading,
+	weather,
+	params,
+	dispatch,
+	error
+}) => {
+    if(!weather && !error) {
+        isLoading = true;
+        dispatch(getWeather(params.city));
+        dispatch(setCity(params.city));
+    }
+	return (
+		isLoading || error ?
+			<Loading />
+			: <div>
 				<DayIcon
-					icon={this.weather.weather[0].icon}
-					header={helpers.formatHeaderFromDate(this.weather.dt)}
+					icon={weather.weather[0].icon}
+					header={helpers.formatHeaderFromDate(weather.dt)}
 				/>
 				<div style={styles.div}>
-					<p>{this.props.location.query.city}</p>
-					<p>{this.weather.weather[0].description}</p>
-					<p>min temp: {helpers.formatTemp(this.weather.temp.min)} C</p>
-					<p>max temp: {helpers.formatTemp(this.weather.temp.max)} С</p>
-					<p>humidity: {this.weather.humidity}</p>
+					<p>{params.city}</p>
+					<p>{weather.weather[0].description}</p>
+					<p>min temp: {helpers.formatTemp(weather.temp.min)} C</p>
+					<p>max temp: {helpers.formatTemp(weather.temp.max)} С</p>
+					<p>humidity: {weather.humidity}</p>
 				</div>
 			</div>
-		);
-	}
-}
+	);
+};
+
+Detail = connect(
+	mapStateToProps,
+	null
+)(Detail);
 
 export default Detail;

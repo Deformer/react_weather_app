@@ -30,7 +30,7 @@ const routes = (
             <Route path="/" component={Main} >
                 <IndexRoute component={PickCityForm} />
                 <Route path="/forecast/:city" component={Forecast}/>
-                <Route path="/detail" component={Detail}/>
+                <Route path="/detail/:city/:index" component={Detail}/>
             </Route>
         </Router>
     </Provider>

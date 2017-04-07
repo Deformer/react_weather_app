@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const key = "65b2710e03be0c98cb6f848898575860";
+const key = "81a09f91016cb1280b4c9870d94ba6ef";
 
 function makeRequest(city){
 	return axios.get(`http://api.openweathermap.org/data/2.5/forecast/daily?q=${city}&type=accurate&APPID=${key}`);

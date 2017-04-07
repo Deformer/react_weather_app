@@ -9,7 +9,7 @@ const styles = {
 		flexDirection: "row",
 		flexWrap: "wrap",
 		maxWidth: 1200,
-		margin: 50
+		margin: "50px auto"
 	},
 	p:{
 		fontSize: 30,

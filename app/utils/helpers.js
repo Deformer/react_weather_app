@@ -1,7 +1,10 @@
+import { getWeather } from '../actions/weather.actions';
+import { setCity } from '../actions/city.actions';
+
 const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
 const helpers = {
-	formatHeaderFromDate:function (time_sec) {
+	formatHeaderFromDate(time_sec) {
 		let date = new Date(time_sec*1000),
 			day = days[date.getDay()],
 			month = date.toString().split(" ")[1],
