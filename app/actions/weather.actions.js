@@ -4,26 +4,26 @@
 import openWeatherMapAPI from '../services/openWeatherMapAPI';
 
 const requestWeather = () => {
-    return {
-        type: 'REQUEST_WEATHER'
-    }
+	return {
+		type: 'REQUEST_WEATHER'
+	};
 };
 
 const receiveWeather = (weather) => {
-    return {
-        type: 'RECEIVE_WEATHER',
-        weather
-    }
+	return {
+		type: 'RECEIVE_WEATHER',
+		weather
+	};
 };
 
 const  getWeather = (city) => {
-    return (dispatch) => {
-        dispatch(requestWeather());
-        return openWeatherMapAPI.getWeatherForCity(city)
+	return (dispatch) => {
+		dispatch(requestWeather());
+		return openWeatherMapAPI.getWeatherForCity(city)
             .then(weather => {
-                dispatch(receiveWeather(weather))
-            })
-    }
+	dispatch(receiveWeather(weather));
+});
+	};
 };
 
 export { getWeather };

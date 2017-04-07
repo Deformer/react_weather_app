@@ -1,26 +1,26 @@
 const styles = {
 	mainDiv:{
-		textAlign: "center"
+		textAlign: 'center'
 	},
 	div:{
-		display: "flex",
-		justifyContent: "space-between",
-		alignItems: "center",
-		flexDirection: "row",
-		flexWrap: "wrap",
+		display: 'flex',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		flexDirection: 'row',
+		flexWrap: 'wrap',
 		maxWidth: 1200,
-		margin: "50px auto"
+		margin: '50px auto'
 	},
 	p:{
 		fontSize: 30,
-		color: "#333",
+		color: '#333',
 		fontWeight: 100
 	},
 	header:{
 		fontSize: 65,
-		color: "#333",
+		color: '#333',
 		fontWeight: 100,
-		textAlign: "center",
+		textAlign: 'center',
 		marginTop: 50,
 		marginBottom: 30
 	}

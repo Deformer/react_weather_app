@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./Main.styles";
-import CityForm from "../CityForm/CityForm";
+import React from 'react';
+import styles from './Main.styles';
+import CityForm from '../CityForm/CityForm';
 
 function Main(props){
 	return(
@@ -9,7 +9,7 @@ function Main(props){
                 <h2 style={styles.defaultHeaderStyles}>
                     Clever Title
                 </h2>
-                <CityForm />
+                <CityForm type={CityForm.Types.ROW}/>
             </div>
             {props.children}
         </div>

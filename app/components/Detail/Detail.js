@@ -1,7 +1,7 @@
-import React from "react";
-import DayIcon from "../DayIcon/DayIcon";
-import helpers from "../../utils/helpers";
-import styles from "./Detail.styles";
+import React from 'react';
+import DayIcon from '../DayIcon/DayIcon';
+import helpers from '../../utils/helpers';
+import styles from './Detail.styles';
 import {connect} from 'react-redux';
 import Loading from '../Loading/Loading';
 import { getWeather } from '../../actions/weather.actions';
@@ -9,29 +9,33 @@ import { setCity } from '../../actions/city.actions';
 
 
 const mapStateToProps = (state,ownProps) => {
-    return {
-        isLoading: state.weather.isLoading,
-        weather: state.weather.weather.list ? state.weather.weather.list[ownProps.params.index] : undefined ,
+	return {
+		isLoading: state.weather.isLoading,
+		weather: state.weather.weather.list ? state.weather.weather.list[ownProps.params.index] : undefined ,
 		error: ownProps.params.index > 6
-    }
+	};
 };
 
-let Detail = ({
-	isLoading,
-	weather,
-	params,
-	dispatch,
-	error
-}) => {
-    if(!weather && !error) {
-        isLoading = true;
-        dispatch(getWeather(params.city));
-        dispatch(setCity(params.city));
-    }
-	return (
-		isLoading || error ?
-			<Loading />
-			: <div>
+class Detail extends React.Component {
+	constructor(props){
+		super(props);
+	}
+	initDispatch(){
+		const {weather, dispatch, params,error } = this.props;
+		if(!weather && !error) {
+			dispatch(setCity(params.city));
+			dispatch(getWeather(params.city));
+		}
+	}
+	componentDidMount(){
+		this.initDispatch();
+	}
+	render() {
+		const {isLoading,weather, params,error } = this.props;
+		return (
+            isLoading || error ?
+				<Loading />
+                : <div>
 				<DayIcon
 					icon={weather.weather[0].icon}
 					header={helpers.formatHeaderFromDate(weather.dt)}
@@ -44,8 +48,10 @@ let Detail = ({
 					<p>humidity: {weather.humidity}</p>
 				</div>
 			</div>
-	);
-};
+		);
+	}
+}
+
 
 Detail = connect(
 	mapStateToProps,

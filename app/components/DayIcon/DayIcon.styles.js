@@ -1,9 +1,9 @@
 const styles = {
 	div:{
-		display: "flex",
-		alignItems: "center",
-		justifyContent: "center",
-		flexDirection: "column",
+		display: 'flex',
+		alignItems: 'center',
+		justifyContent: 'center',
+		flexDirection: 'column',
 		margin: 35
 	},
 	img:{
@@ -11,7 +11,7 @@ const styles = {
 	},
 	header:{
 		fontSize: 30,
-		color: "#333",
+		color: '#333',
 		fontWeight: 100
 	}
 };

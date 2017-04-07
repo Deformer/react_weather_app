@@ -1,9 +1,9 @@
-import React from "react";
-import { Router, Route, hashHistory, IndexRoute } from "react-router";
-import Main from "../components/Main/Main";
-import PickCityForm from "../components/PickCityForm/PickCityForm";
-import Forecast from "../components/Forecast/Forecast";
-import Detail from "../components/Detail/Detail";
+import React from 'react';
+import { Router, Route, hashHistory, IndexRoute } from 'react-router';
+import Main from '../components/Main/Main';
+import PickCityForm from '../components/PickCityForm/PickCityForm';
+import Forecast from '../components/Forecast/Forecast';
+import Detail from '../components/Detail/Detail';
 import weather from '../reducers/weather';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
@@ -13,8 +13,8 @@ import { getWeather } from '../actions/weather.actions';
 
 
 const weatherApp = combineReducers({
-    weather,
-    city
+	weather,
+	city
 });
 
 const store = createStore(

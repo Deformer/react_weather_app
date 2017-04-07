@@ -3,8 +3,8 @@ const styles = {
 		fontSize: 34,
 		fontWeight: 100,
 		maxWidth: 400,
-		margin: "0 auto",
-		textAlign: "center"
+		margin: '0 auto',
+		textAlign: 'center'
 	}
 };
 

@@ -1,14 +1,14 @@
 
 
 const styles = {
-	formStyles: function (flexDirection = "row") {
+	formStyles: function (flexDirection = 'row') {
 		return {
-            display: "flex",
+			display: 'flex',
 			flexDirection : flexDirection,
-			justifyContent : "center",
-			alignItems : "center",
+			justifyContent : 'center',
+			alignItems : 'center',
 			maxWidth : 300
-		}
+		};
 	},
 	buttonStyles : {
 		margin: 10

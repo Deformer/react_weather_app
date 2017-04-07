@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import styles from './Loading.styles';
 
 const PropTypes = React.PropTypes;
@@ -10,7 +10,7 @@ const propTypes = {
 
 const defaultProps = {
 	speed: 300,
-	text: "Loading"
+	text: 'Loading'
 };
 
 class Loading extends React.Component{
@@ -23,7 +23,7 @@ class Loading extends React.Component{
 		this.originalText = this.props.text;
 	}
 	componentDidMount(){
-		let stopper = this.originalText+"...";
+		let stopper = this.originalText+'...';
 		this.interval = setInterval(function(){
 			if(this.state.text === stopper) {
 				this.setState({
@@ -31,7 +31,7 @@ class Loading extends React.Component{
 				});
 			} else {
 				this.setState({
-					text: this.state.text + "."
+					text: this.state.text + '.'
 				});
 			}
 		}.bind(this),this.props.speed);

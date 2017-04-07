@@ -1,13 +1,10 @@
-import { getWeather } from '../actions/weather.actions';
-import { setCity } from '../actions/city.actions';
-
-const days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
 
 const helpers = {
 	formatHeaderFromDate(time_sec) {
 		let date = new Date(time_sec*1000),
 			day = days[date.getDay()],
-			month = date.toString().split(" ")[1],
+			month = date.toString().split(' ')[1],
 			day_of_month = date.getDate();
 		return `${day}, ${month} ${day_of_month}`;
 	},
